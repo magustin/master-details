@@ -1,0 +1,10 @@
+<h1>Product Details</h1>
+
+Show product details for product: {{id}}
+<div *ngIf="product">
+<ul>
+    <li *ngFor="let p of products">
+        {{p.customer}}
+    </li>
+</ul>
+</div>
