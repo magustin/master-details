@@ -1,38 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 import { Logger } from './services/logger.service';
+import { SelectedProductPipe } from './pipes/selected-product.pipe';
 
-// ROUTES
-const appRoutes: Routes = [
-    
-    { path: '', redirectTo: 'product-list', pathMatch: 'full' },
-    { path: 'product-list', component: ProductListComponent },
-    { path: 'product-details/:id', component: ProductDetailsComponent }
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SelectedProductPipe
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true })
+    FormsModule
   ],
   providers: [Logger],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

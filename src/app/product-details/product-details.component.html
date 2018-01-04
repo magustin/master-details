@@ -1,10 +1,27 @@
-<h1>Product Details</h1>
-
-Show product details for product: {{id}}
-<div *ngIf="product">
-<ul>
-    <li *ngFor="let p of products">
-        {{p.customer}}
-    </li>
-</ul>
+<div class="container mt-5">
+    <h1>Product {{id}} Details</h1>
+    <div class="card-deck" class="list-group list-group-flush" *ngFor="let p of (products | selectedProduct: id)">
+      <div class="card my-3">
+        <div class="card-body">
+          <h5 class="card-title">Customer</h5>
+          <p class="card-text">{{p.customer}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Type</h5>
+          <p class="card-text">{{p.type}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Status</h5>
+          <p class="card-text">{{p.status}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-primary" [routerLink]="['/product-list']">Back To Product Listing</a>
 </div>

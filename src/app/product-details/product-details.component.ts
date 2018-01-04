@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Product } from '../products';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+
+//import { Observable } from 'rxjs/Observable';
+
 // USING A SERVICE INSTEAD
 import { ProductService } from '../services/product.service';
 
@@ -13,25 +15,24 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductDetailsComponent implements OnInit, OnDestroy {
 
-    private product_id: number;
+    private id: number;
     products: Product[];
     private sub: any;
 
-    constructor(productService: ProductService, private route: ActivatedRoute) {
+    prodIdSnapshot: number;
+
+    constructor(private productService: ProductService, private route: ActivatedRoute) {
 
         this.products = productService.getProducts();
     }
 
     ngOnInit() {
-    
+        
         this.sub = this.route.params.subscribe(params => {
 
-            this.product_id = +params['id'];
-            console.log("the product id is: " + this.product_id);
+            this.id = +params['id'];
+            //console.log("The product id is: " + this.id);
         });
-
-        const id = +this.route.snapshot.params["id"];
-
     }
 
     ngOnDestroy() {
