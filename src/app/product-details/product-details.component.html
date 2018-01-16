@@ -1,10 +1,11 @@
-<div class="container mt-5">
-    <h1>Product {{id}} Details</h1>
+
+<div class="container mt-5 mb-5">
+    <h1>Product Details</h1>
     <div class="card-deck" class="list-group list-group-flush" *ngFor="let p of (products | selectedProduct: id)">
       <div class="card my-3">
         <div class="card-body">
-          <h5 class="card-title">Customer</h5>
-          <p class="card-text">{{p.customer}}</p>
+          <h5 class="card-title">Name</h5>
+          <p class="card-text">{{p.name}}</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
@@ -19,6 +20,20 @@
         <div class="card-body">
           <h5 class="card-title">Status</h5>
           <p class="card-text">{{p.status}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+       <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Price</h5>
+          <p class="card-text">${{p.price}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+       <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Description</h5>
+          <p class="card-text">{{p.description}}</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
-import { Logger } from './services/logger.service';
+import { ProductService } from './services/product.service';
 import { SelectedProductPipe } from './pipes/selected-product.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule
   ],
-  providers: [Logger],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <h1>Product List</h1>
     <div class="list-group">
-        <a class="list-group-item list-group-item-action" *ngFor="let p of products" [routerLink]="['/product-details', p.id]">{{p.customer}}</a>
+        <a class="list-group-item list-group-item-action" *ngFor="let p of products" [routerLink]="['/product-details', p.id]">{{p.name}}</a>
     </div>
 </div>
