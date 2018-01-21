@@ -2,8 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Product } from '../products';
 import { ActivatedRoute } from '@angular/router';
 
-//import { Observable } from 'rxjs/Observable';
-
 // USING A SERVICE INSTEAD
 import { ProductService } from '../services/product.service';
 
@@ -31,7 +29,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.sub = this.route.params.subscribe(params => {
 
             this.id = +params['id'];
-            //console.log("The product id is: " + this.id);
         });
     }
 
