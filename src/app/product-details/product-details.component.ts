@@ -13,7 +13,7 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductDetailsComponent implements OnInit, OnDestroy {
 
-    private id: number;
+    public id: number;
     products: Product[];
     private sub: any;
 
